@@ -98,7 +98,7 @@ function run() {
             const jsonFeed = {
                 version: 'https://jsonfeed.org/version/1',
                 title: core.getInput('title'),
-                feed_url: `<unknown>`,
+                feed_url: core.getInput('feedUrl'),
                 items: items.reverse().map(({ id, title, url, content_text }) => ({
                     id,
                     title,

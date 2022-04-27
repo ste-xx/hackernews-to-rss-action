@@ -24,4 +24,5 @@ jobs:
           state: |
             {
             }
+          feedUrl: https://unknown
           id: hn

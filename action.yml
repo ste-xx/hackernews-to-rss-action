@@ -5,6 +5,9 @@ inputs:
   state:
     required: true
     description: 'state as json'
+  feedUrl:
+    required: true
+    description: 'url where the feed can be found'
   minPoints:
     required: true
     description: 'Min points to fetch entry'
