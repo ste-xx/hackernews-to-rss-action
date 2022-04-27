@@ -1,11 +1,32 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'HackerNews to RSS action'
+description: 'Collects entries from HN and transformed them to a RSS Feed'
+author: 'Stefan Breitenstein'
 inputs:
-  milliseconds: # change this
+  state:
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'state as json'
+  minPoints:
+    required: true
+    description: 'Min points to fetch entry'
+    default: '500'
+  days:
+    required: true
+    description: 'Last x days'
+    default: '7'
+  retention:
+    required: true
+    description: 'how long should an entry be retained'
+    default: '10'
+  title:
+    required: true
+    description: 'title for the json feed'
+    default: 'HackerNews'
+outputs:
+  state:
+    description: 'State for the action. Needs to be added in the next run'
+  jsonFeed:
+    description: 'created jsonFeed from the previous state and the new fetched data'
+
 runs:
   using: 'node16'
   main: 'dist/index.js'
