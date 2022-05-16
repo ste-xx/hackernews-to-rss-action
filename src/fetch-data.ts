@@ -27,6 +27,7 @@ export const fetchData = async (input: Input): Promise<FeedMap> => {
   url.searchParams.append('query', '')
   url.searchParams.append('tags', 'story')
   url.searchParams.append('page', '0')
+  url.searchParams.append('hitsPerPage', '1000')
   url.searchParams.append(
     'numericFilters',
     `created_at_i>${lastTimestampInSeconds},points>${input.minPoints}`
