@@ -27,6 +27,7 @@ const fetchData = (input) => __awaiter(void 0, void 0, void 0, function* () {
     url.searchParams.append('query', '');
     url.searchParams.append('tags', 'story');
     url.searchParams.append('page', '0');
+    url.searchParams.append('hitsPerPage', '1000');
     url.searchParams.append('numericFilters', `created_at_i>${lastTimestampInSeconds},points>${input.minPoints}`);
     const client = new http_client_1.HttpClient();
     const response = yield client.getJson(url.toString());
