@@ -34,7 +34,10 @@ export const fetchData = async (input: Input): Promise<FeedMap> => {
   const client = new HttpClient()
   const response = await client.getJson<HackerNewsResponse>(url.toString())
   const result = response.result?.hits ?? []
-
+  for (const e of result) {
+    // eslint-disable-next-line no-console
+    console.log(`fetched entry: ${e.title}`)
+  }
   return Object.fromEntries(
     result.map(({title, points, objectID}) => [
       objectID,

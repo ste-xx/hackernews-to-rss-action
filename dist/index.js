@@ -31,6 +31,10 @@ const fetchData = (input) => __awaiter(void 0, void 0, void 0, function* () {
     const client = new http_client_1.HttpClient();
     const response = yield client.getJson(url.toString());
     const result = (_b = (_a = response.result) === null || _a === void 0 ? void 0 : _a.hits) !== null && _b !== void 0 ? _b : [];
+    for (const e of result) {
+        // eslint-disable-next-line no-console
+        console.log(`fetched entry: ${e.title}`);
+    }
     return Object.fromEntries(result.map(({ title, points, objectID }) => [
         objectID,
         {
